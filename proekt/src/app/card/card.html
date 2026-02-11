@@ -1,0 +1,26 @@
+<div class="card">
+  <img [src]="img.src" [alt]="img.alt" />
+
+  <div class="interactions">
+    <button (click)="like()">👍</button>
+    <span>{{ img.likes }}</span>
+    <button (click)="dislike()">👎</button>
+    <span>{{ img.dislikes }}</span>
+  </div>
+
+  <div class="comments-section">
+    <h4>Коментари:</h4>
+    <div class="comments-list">
+        <div *ngFor="let comment of img.comments">
+            <p class="comment">{{ comment }}</p>
+        </div>
+    </div>
+    <input 
+        type="text" 
+        [(ngModel)]="img.newCommentInput" 
+        (keyup.enter)="addComment()"
+        placeholder="Напишете коментар..." 
+    />
+    <button (click)="addComment()">Објави</button>
+  </div>
+</div>

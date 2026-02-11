@@ -1,20 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
-interface CityImage {
-  src: string;
-  alt: string;
-  likes: number;
-  dislikes: number;
-  comments: string[];
-  newCommentInput: string;
-}
+import { CardComponent, CityImage } from '../card/card';
 
 @Component({
   selector: 'app-gallery',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, CardComponent],
   templateUrl: './gallery.html',
   styleUrl: './gallery.css'
 })
@@ -31,14 +23,4 @@ export class GalleryComponent {
       likes: 0, dislikes: 0, comments: [], newCommentInput: '' 
     }
   ];
-
-  like(img: CityImage) { img.likes++; }
-  dislike(img: CityImage) { img.dislikes++; }
-  
-  addComment(img: CityImage) {
-    if (img.newCommentInput.trim()) {
-      img.comments.push(img.newCommentInput);
-      img.newCommentInput = ''; 
-    }
-  }
 }
