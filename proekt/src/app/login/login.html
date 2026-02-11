@@ -1,0 +1,28 @@
+<h1>Најава</h1>
+<div class="login-container">
+  <form (ngSubmit)="onLogin()">
+    <div class="input-container">
+      <label for="username">Корисничко име</label>
+      <input
+        type="text"
+        id="username"
+        [(ngModel)]="username"
+        name="username"
+        required
+        placeholder="Внесете корисничко име"
+      />
+    </div>
+    <div class="input-container">
+      <label for="password">Лозинка</label>
+      <input
+        type="password"
+        id="password"
+        [(ngModel)]="password"
+        name="password"
+        required
+        placeholder="Внесете лозинка"
+      />
+    </div>
+    <button type="submit">Најави се</button>
+  </form>
+</div>

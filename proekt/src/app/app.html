@@ -1,0 +1,32 @@
+<header class="site-header">
+  <div class="logo">
+    {{
+      (authService.currentUser$ | async)
+        ? 'Добредојде, ' + (authService.currentUser$ | async)
+        : 'City Explorer'
+    }}
+  </div>
+  <nav>
+    <ul>
+      <li><a routerLink="/">Почетна</a></li>
+      <li><a routerLink="/gallery">Галерија</a></li>
+      <li><a routerLink="/blog">Блог</a></li>
+      <li><a routerLink="/survey">Анкета</a></li>
+
+      <li *ngIf="!(authService.currentUser$ | async)">
+        <a routerLink="/login">Најава</a>
+      </li>
+      <li *ngIf="authService.currentUser$ | async">
+        <a href="#" (click)="logout($event)">Одјави се</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2025 City Explorer. Сите права се задржани.</p>
+</footer>

@@ -1,0 +1,22 @@
+<h1>Галерија на градови</h1>
+<div class="gallery-grid">
+  <div class="gallery-item" *ngFor="let img of images">
+    <img [src]="img.src" [alt]="img.alt" />
+
+    <div class="interactions">
+      <button (click)="like(img)">Ми се допаѓа</button>
+      <span>{{ img.likes }}</span>
+      <button (click)="dislike(img)">Не ми се допаѓа</button>
+      <span>{{ img.dislikes }}</span>
+    </div>
+
+    <div class="comments-section">
+      <h4>Коментари:</h4>
+      <div *ngFor="let comment of img.comments">
+        <p class="comment">{{ comment }}</p>
+      </div>
+      <input type="text" [(ngModel)]="img.newCommentInput" placeholder="Напишете коментар..." />
+      <button (click)="addComment(img)">Објави</button>
+    </div>
+  </div>
+</div>
