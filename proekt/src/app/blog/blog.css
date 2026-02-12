@@ -67,7 +67,6 @@
   transform: scale(1.1);
 }
 
-/* Overlay effect */
 .image-container::after {
   content: '';
   position: absolute;

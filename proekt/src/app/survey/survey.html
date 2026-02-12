@@ -1,7 +1,5 @@
 <main>
   <h1>Анкета за импресии од посетителите</h1>
-
-  <!-- Show form only if NOT submitted -->
   <form *ngIf="!isSubmitted" id="survey-form" (ngSubmit)="submitSurvey()">
     <div class="form-group">
       <label for="visitor-name">Вашето име:</label>
@@ -31,8 +29,6 @@
       <input type="submit" value="Испрати" />
     </div>
   </form>
-
-  <!-- Show this message after submission -->
   <div *ngIf="isSubmitted" id="survey-results">
     <h2>Ви благодариме!</h2>
     <p>Вашата анкета е успешно испратена.</p>

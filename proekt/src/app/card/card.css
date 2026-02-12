@@ -26,7 +26,6 @@
   transform: scale(1.05);
 }
 
-/* Interactions Section */
 .interactions {
   padding: 1.25rem;
   display: flex;
@@ -66,7 +65,6 @@
   text-align: center;
 }
 
-/* Comments Section */
 .comments-section {
   padding: 1.25rem;
   background-color: #fff;
@@ -92,7 +90,6 @@
   padding-right: 5px;
 }
 
-/* Custom Scrollbar for comments */
 .comments-list::-webkit-scrollbar {
   width: 6px;
 }

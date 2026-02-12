@@ -16,7 +16,6 @@ export class SurveyComponent {
   isSubmitted: boolean = false;
 
   submitSurvey() {
-    // Logic to "send" data
     alert(`Ви благодариме ${this.visitorName}!\nОцена: ${this.rating}\nИмпресии: ${this.feedback}`);
     this.isSubmitted = true;
   }

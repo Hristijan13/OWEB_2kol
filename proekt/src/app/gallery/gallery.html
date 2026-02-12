@@ -1,6 +1,6 @@
 <h1>Галерија на градови</h1>
 <div class="gallery-grid">
   <div *ngFor="let img of images">
-    <app-card [img]="img"></app-card>
+    <app-card [img]="img" (imageUpdated)="saveData()"></app-card>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CardComponent, CityImage } from '../card/card';
@@ -10,7 +10,7 @@ import { CardComponent, CityImage } from '../card/card';
   templateUrl: './gallery.html',
   styleUrl: './gallery.css'
 })
-export class GalleryComponent {
+export class GalleryComponent implements OnInit {
   images: CityImage[] = [
     { 
       src: 'assets/slikaBarcelona.jpg', 
@@ -23,4 +23,15 @@ export class GalleryComponent {
       likes: 0, dislikes: 0, comments: [], newCommentInput: '' 
     }
   ];
+
+  ngOnInit() {
+    const savedData = localStorage.getItem('galleryData');
+    if (savedData) {
+      this.images = JSON.parse(savedData);
+    }
+  }
+
+  saveData() {
+    localStorage.setItem('galleryData', JSON.stringify(this.images));
+  }
 }
